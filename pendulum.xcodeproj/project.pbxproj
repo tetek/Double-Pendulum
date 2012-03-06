@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7D52A0011506CFDF00D04B75 /* Controls.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D52A0001506CFDF00D04B75 /* Controls.m */; };
 		7DACA5A515069E34003C225E /* Vector4.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DACA5A415069E34003C225E /* Vector4.m */; };
 		7DFC725714F5A923002DCE54 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DFC725614F5A923002DCE54 /* QuartzCore.framework */; };
 		7DFC725914F5A923002DCE54 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DFC725814F5A923002DCE54 /* OpenGLES.framework */; };
@@ -126,6 +127,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7D529FFF1506CFDF00D04B75 /* Controls.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Controls.h; sourceTree = "<group>"; };
+		7D52A0001506CFDF00D04B75 /* Controls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controls.m; sourceTree = "<group>"; };
 		7DACA5A315069E34003C225E /* Vector4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector4.h; sourceTree = "<group>"; };
 		7DACA5A415069E34003C225E /* Vector4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector4.m; sourceTree = "<group>"; };
 		7DFC725214F5A923002DCE54 /* pendulum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pendulum.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -427,6 +430,8 @@
 				7DACA5A415069E34003C225E /* Vector4.m */,
 				7DFC73BE14F5A926002DCE54 /* MainLayer.h */,
 				7DFC73BF14F5A926002DCE54 /* MainLayer.m */,
+				7D529FFF1506CFDF00D04B75 /* Controls.h */,
+				7D52A0001506CFDF00D04B75 /* Controls.m */,
 				7DFC73C114F5A926002DCE54 /* GameConfig.h */,
 				7DFC726714F5A923002DCE54 /* Resources */,
 				7DFC727B14F5A923002DCE54 /* libs */,
@@ -931,6 +936,7 @@
 				7DFC73BD14F5A926002DCE54 /* RootViewController.m in Sources */,
 				7DFC73C014F5A926002DCE54 /* MainLayer.m in Sources */,
 				7DACA5A515069E34003C225E /* Vector4.m in Sources */,
+				7D52A0011506CFDF00D04B75 /* Controls.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

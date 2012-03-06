@@ -8,6 +8,7 @@
 
 #import "cocos2d.h"
 #import "Vector4.h"
+#import "Controls.h"
 @interface MainLayer : CCLayer
 {
     CCSprite *pendulum1;

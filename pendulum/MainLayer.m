@@ -7,6 +7,7 @@
 //
 
 #import "MainLayer.h"
+
 #define PendulumAnchorPoint ccp(384,700)
 
 @implementation MainLayer
@@ -31,6 +32,9 @@
         [pendulum1 setPosition:ccp(100,100)];
         [pendulum2 setPosition:ccp(200,200)];
         
+        Controls *controls = [[Controls alloc] init ];
+//        [myView setBackgroundColor:[UIColor redColor]];
+        [[[CCDirector sharedDirector] openGLView] addSubview:controls.view];
 //        [self addChild:pendulum1];
 //        [self addChild:pendulum2];
         //Defaults
@@ -47,7 +51,7 @@
         scale = 100;
         self.vz = [Vector4 vectorA:M_PI b:M_PI_2 c:0 d:0];
         
-        h = 0.1;
+        h = 0.001;
         
         [self schedule:@selector(calculatePosition) interval:h];
         
@@ -63,8 +67,9 @@
     Vector4 *vb = [self f:[vz sum:[va multiple:0.5*h]]];
     Vector4 *vc = [self f:[vz sum:[vb multiple:0.5*h]]];
     Vector4 *vd = [self f:[vz sum:[vc multiple:h]]];
-    
-    Vector4 *temp = [va sum:[[vb multiple:2] sum:[[vc multiple:2] sum:vd]]];
+
+    Vector4 *temp = [[[va sum:[vb multiple:2.0]] sum:[vc multiple:2.0]] sum:vd];
+
     Vector4 *vz1 = [vz sum:[temp multiple:h/6.0]];
     
     
