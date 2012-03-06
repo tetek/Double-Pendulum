@@ -65,7 +65,6 @@ extern "C" {
  */
 #define ccp(__X__,__Y__) CGPointMake(__X__,__Y__)
 
-
 /** Returns opposite of point.
  @return CGPoint
  @since v0.7.2

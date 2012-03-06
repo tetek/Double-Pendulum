@@ -6,17 +6,31 @@
 //  Copyright 2012. All rights reserved.
 //
 
-
-// When you import this file, you import all the cocos2d classes
 #import "cocos2d.h"
-
-// HelloWorldLayer
+#import "Vector4.h"
 @interface MainLayer : CCLayer
 {
-    CCLabelTTF *label;
+    CCSprite *pendulum1;
+    CCSprite *pendulum2;
+
+    CGPoint pen1;
+    CGPoint pen2;
+    
+    float mass1;
+    float mass2;
+    
+    float length1;
+    float length2;
+    
+    float gravity;
+    float h;
+    float scale;
 }
 
-// returns a CCScene that contains the HelloWorldLayer as the only child
+-(Vector4*)f:(Vector4*)v;
+-(float)f1:(Vector4*)v;
+-(float)f2:(Vector4*)v;
 +(CCScene *) scene;
+@property(nonatomic,retain)Vector4 *vz;
 
 @end

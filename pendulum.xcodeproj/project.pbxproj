@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7DACA5A515069E34003C225E /* Vector4.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DACA5A415069E34003C225E /* Vector4.m */; };
 		7DFC725714F5A923002DCE54 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DFC725614F5A923002DCE54 /* QuartzCore.framework */; };
 		7DFC725914F5A923002DCE54 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DFC725814F5A923002DCE54 /* OpenGLES.framework */; };
 		7DFC725B14F5A923002DCE54 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DFC725A14F5A923002DCE54 /* OpenAL.framework */; };
@@ -125,6 +126,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7DACA5A315069E34003C225E /* Vector4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector4.h; sourceTree = "<group>"; };
+		7DACA5A415069E34003C225E /* Vector4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector4.m; sourceTree = "<group>"; };
 		7DFC725214F5A923002DCE54 /* pendulum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pendulum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DFC725614F5A923002DCE54 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7DFC725814F5A923002DCE54 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -357,7 +360,7 @@
 		7DFC73B914F5A926002DCE54 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7DFC73BB14F5A926002DCE54 /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		7DFC73BC14F5A926002DCE54 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		7DFC73BE14F5A926002DCE54 /* MainLayer.h */ = {isa = PBXFileReference; path = MainLayer.h; sourceTree = "<group>"; };
+		7DFC73BE14F5A926002DCE54 /* MainLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainLayer.h; sourceTree = "<group>"; };
 		7DFC73BF14F5A926002DCE54 /* MainLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainLayer.m; sourceTree = "<group>"; };
 		7DFC73C114F5A926002DCE54 /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -420,6 +423,8 @@
 				7DFC73B914F5A926002DCE54 /* AppDelegate.m */,
 				7DFC73BB14F5A926002DCE54 /* RootViewController.h */,
 				7DFC73BC14F5A926002DCE54 /* RootViewController.m */,
+				7DACA5A315069E34003C225E /* Vector4.h */,
+				7DACA5A415069E34003C225E /* Vector4.m */,
 				7DFC73BE14F5A926002DCE54 /* MainLayer.h */,
 				7DFC73BF14F5A926002DCE54 /* MainLayer.m */,
 				7DFC73C114F5A926002DCE54 /* GameConfig.h */,
@@ -925,6 +930,7 @@
 				7DFC73BA14F5A926002DCE54 /* AppDelegate.m in Sources */,
 				7DFC73BD14F5A926002DCE54 /* RootViewController.m in Sources */,
 				7DFC73C014F5A926002DCE54 /* MainLayer.m in Sources */,
+				7DACA5A515069E34003C225E /* Vector4.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -977,8 +983,10 @@
 				GCC_PREFIX_HEADER = pendulum/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = pendulum/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -992,8 +1000,10 @@
 				GCC_PREFIX_HEADER = pendulum/Prefix.pch;
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
 				INFOPLIST_FILE = pendulum/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
