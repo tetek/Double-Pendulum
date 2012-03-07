@@ -28,8 +28,7 @@
     float h;
     float scale;
 }
--(void)stopPendulum;
--(void)startPendulum;
+
 -(Vector4*)f:(Vector4*)v;
 -(float)f1:(Vector4*)v;
 -(float)f2:(Vector4*)v;

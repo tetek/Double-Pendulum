@@ -120,7 +120,7 @@
     delegate->h = [[h text] floatValue];   
     
     [delegate setTeta1:CC_DEGREES_TO_RADIANS([[teta1 text] floatValue]) andTeta2:CC_DEGREES_TO_RADIANS([[teta2 text] floatValue])];
-    [delegate startPendulum];
+//    [delegate startPendulum];
 }
 -(void)hideKeyboard{
     [mass1 resignFirstResponder];

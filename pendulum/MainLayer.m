@@ -28,9 +28,7 @@
 	if( (self=[super init])) {
         
         pendulum1 = [CCSprite spriteWithFile:@"megusta.png"];
-        pendulum2 = [CCSprite spriteWithFile:@"megusta.png"];
-        
-        
+        pendulum2 = [CCSprite spriteWithFile:@"megusta.png"];                
         
         [self addChild:pendulum1];
         [self addChild:pendulum2];
@@ -56,58 +54,41 @@
         Controls *controls = [[Controls alloc] initWithDelegate:self];
         [[[CCDirector sharedDirector] openGLView] addSubview:controls.view];
         
-        [self schedule:@selector(calculatePosition) interval:h];
+        [NSThread detachNewThreadSelector:@selector(calc) toTarget:self withObject:nil];
         
 
 	}
 	return self;
 }
--(void)stopPendulum{
-    [self unscheduleAllSelectors];
-}
--(void)startPendulum{
-    [self schedule:@selector(calculatePosition) interval:h];
-}
--(void)calculatePosition{
-    //Changing position with h frequency
-//    NSLog(@"elo");
-    Vector4 *va = [self f:vz];
-    Vector4 *vb = [self f:[vz sum:[va multiple:0.5*h]]];
-    Vector4 *vc = [self f:[vz sum:[vb multiple:0.5*h]]];
-    Vector4 *vd = [self f:[vz sum:[vc multiple:h]]];
+-(void)calc{
+    while (true) {
+        Vector4 *va = [self f:vz];
+        Vector4 *vb = [self f:[vz sum:[va multiple:0.5*h]]];
+        Vector4 *vc = [self f:[vz sum:[vb multiple:0.5*h]]];
+        Vector4 *vd = [self f:[vz sum:[vc multiple:h]]];
+        
+        Vector4 *temp = [[[va sum:[vb multiple:2.0]] sum:[vc multiple:2.0]] sum:vd];
+        Vector4 *vz1 = [vz sum:[temp multiple:h/6.0]];        
+        
+        pen1 = ccpAdd(PendulumAnchorPoint, ccp(sinf(vz->a)*length1*scale,-cosf(vz->a)*length1*scale));
+        pen2 = ccpAdd(pen1, ccp(sinf(vz->b)*length2*scale,-cosf(vz->b)*length2*scale));
+        
+        self.vz = [Vector4 vectorFromVector:vz1];
+        [NSThread sleepForTimeInterval:h];
 
-    Vector4 *temp = [[[va sum:[vb multiple:2.0]] sum:[vc multiple:2.0]] sum:vd];
-
-    Vector4 *vz1 = [vz sum:[temp multiple:h/6.0]];
-    
-    
-    pen1 = ccpAdd(PendulumAnchorPoint, ccp(sinf(vz->a)*length1*scale,-cosf(vz->a)*length1*scale));
-    pen2 = ccpAdd(pen1, ccp(sinf(vz->b)*length2*scale,-cosf(vz->b)*length2*scale));
-
-//    NSLog(@"pen 1: %f %f",pen1.x, pen1.y);
-    
-    self.vz = [Vector4 vectorFromVector:vz1];
-    
+    }
 }
+
 -(void)draw{
-    
     glLineWidth(2);
     glEnable(GL_LINE_SMOOTH);
     ccDrawLine(PendulumAnchorPoint,pen1);
     ccDrawLine(pen1,pen2);
-    
-    glLineWidth(4);
-    
-//	glColor4ub(100, 255, 0, 255);
-//	ccDrawCircle(pen1, 20, 0, 100, NO);
-    [pendulum1 setPosition:pen1];
-    
-//    glColor4ub(0, 255, 0, 255);
-//    ccDrawCircle(pen2, 20, 0, 100, NO);
-    [pendulum2 setPosition:pen2];
-    
 
+    [pendulum1 setPosition:pen1];    
+    [pendulum2 setPosition:pen2];
 }
+
 //-(void)ccTouch
 -(Vector4*)f:(Vector4*)v{
     return [Vector4 vectorA:v->c b:v->d c:[self f1:v] d:[self f2:v]];
