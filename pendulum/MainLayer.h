@@ -11,6 +11,7 @@
 #import "Controls.h"
 @interface MainLayer : CCLayer
 {
+    @public
     CCSprite *pendulum1;
     CCSprite *pendulum2;
 
@@ -27,11 +28,13 @@
     float h;
     float scale;
 }
-
+-(void)stopPendulum;
+-(void)startPendulum;
 -(Vector4*)f:(Vector4*)v;
 -(float)f1:(Vector4*)v;
 -(float)f2:(Vector4*)v;
 +(CCScene *) scene;
+-(void)setTeta1:(float)teta1 andTeta2:(float)teta2;
 @property(nonatomic,retain)Vector4 *vz;
 
 @end

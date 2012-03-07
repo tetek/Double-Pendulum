@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7D52A0011506CFDF00D04B75 /* Controls.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D52A0001506CFDF00D04B75 /* Controls.m */; };
 		7DACA5A515069E34003C225E /* Vector4.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DACA5A415069E34003C225E /* Vector4.m */; };
+		7DD9F63B150811AE000994F4 /* megusta.png in Resources */ = {isa = PBXBuildFile; fileRef = 7DD9F63A150811AE000994F4 /* megusta.png */; };
 		7DFC725714F5A923002DCE54 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DFC725614F5A923002DCE54 /* QuartzCore.framework */; };
 		7DFC725914F5A923002DCE54 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DFC725814F5A923002DCE54 /* OpenGLES.framework */; };
 		7DFC725B14F5A923002DCE54 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DFC725A14F5A923002DCE54 /* OpenAL.framework */; };
@@ -131,6 +132,7 @@
 		7D52A0001506CFDF00D04B75 /* Controls.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Controls.m; sourceTree = "<group>"; };
 		7DACA5A315069E34003C225E /* Vector4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector4.h; sourceTree = "<group>"; };
 		7DACA5A415069E34003C225E /* Vector4.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector4.m; sourceTree = "<group>"; };
+		7DD9F63A150811AE000994F4 /* megusta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = megusta.png; sourceTree = "<group>"; };
 		7DFC725214F5A923002DCE54 /* pendulum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pendulum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DFC725614F5A923002DCE54 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7DFC725814F5A923002DCE54 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -443,6 +445,7 @@
 		7DFC726714F5A923002DCE54 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7DD9F63A150811AE000994F4 /* megusta.png */,
 				7DFC726814F5A923002DCE54 /* Default.png */,
 				7DFC726A14F5A923002DCE54 /* fps_images.png */,
 				7DFC726C14F5A923002DCE54 /* Icon-72.png */,
@@ -827,6 +830,7 @@
 				7DFC727514F5A923002DCE54 /* Icon.png in Resources */,
 				7DFC727714F5A923002DCE54 /* Icon@2x.png in Resources */,
 				7DFC727A14F5A923002DCE54 /* iTunesArtwork in Resources */,
+				7DD9F63B150811AE000994F4 /* megusta.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
