@@ -9,7 +9,8 @@
 #import "Controls.h"
 #import "MainLayer.h"
 @interface Controls ()
-
+-(void)hideKeyboard;
+- (void)addFields;
 @end
 
 @implementation Controls
@@ -19,7 +20,7 @@
 {
     self = [super init];
     if (self) {
-        // Custom initialization
+
         self.delegate = delegate_;
         self.view = [[[UIView alloc] initWithFrame:CGRectMake(0, 0, 768, 150)] autorelease];
         [self.view setBackgroundColor:[UIColor redColor]];
@@ -111,16 +112,15 @@
 }
 -(void)setValues:(id)sender{
     [self hideKeyboard];
-    [delegate stopPendulum];
     delegate->mass1 = [[mass1 text] floatValue];    
     delegate->mass2 = [[mass2 text] floatValue]; 
     delegate->length1 = [[length1 text] floatValue];  
     delegate->length2 = [[length2 text] floatValue];  
     delegate->gravity = [[gravity text] floatValue];  
     delegate->h = [[h text] floatValue];   
-    
+    NSLog(@"%f",CC_DEGREES_TO_RADIANS([[teta1 text] floatValue]));
     [delegate setTeta1:CC_DEGREES_TO_RADIANS([[teta1 text] floatValue]) andTeta2:CC_DEGREES_TO_RADIANS([[teta2 text] floatValue])];
-//    [delegate startPendulum];
+
 }
 -(void)hideKeyboard{
     [mass1 resignFirstResponder];

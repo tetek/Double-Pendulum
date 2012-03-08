@@ -8,12 +8,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "pendulum/Controls.m"
-         timestampString = "352849378.75126"
+         timestampString = "352858648.048197"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "42"
-         endingLineNumber = "42"
-         landmarkName = "-addFields"
+         startingLineNumber = "115"
+         endingLineNumber = "115"
+         landmarkName = "-setValues:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

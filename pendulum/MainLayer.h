@@ -14,7 +14,7 @@
     @public
     CCSprite *pendulum1;
     CCSprite *pendulum2;
-
+    
     CGPoint pen1;
     CGPoint pen2;
     

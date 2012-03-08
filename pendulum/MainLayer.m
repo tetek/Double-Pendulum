@@ -14,7 +14,6 @@
 @synthesize vz;
 +(CCScene *) scene
 {
-    
 	CCScene *scene = [CCScene node];
 	MainLayer *layer = [MainLayer node];
 	[scene addChild: layer];
@@ -24,7 +23,6 @@
 
 -(id) init
 {
-
 	if( (self=[super init])) {
         
         pendulum1 = [CCSprite spriteWithFile:@"megusta.png"];
@@ -33,7 +31,7 @@
         [self addChild:pendulum1];
         [self addChild:pendulum2];
         //Defaults
-        length1 = 2;
+        length1 = 1;
         length2 = 1;
         
         mass1 = 0.5;
@@ -47,13 +45,13 @@
         [pendulum2 setAnchorPoint:ccp(0.5,0.5)];
         
         gravity = 9.8;
-        scale = 100;
+        scale = 150;
+
         self.vz = [Vector4 vectorA:M_PI b:M_PI_2 c:0 d:0];
         
         h = 0.001;
         Controls *controls = [[Controls alloc] initWithDelegate:self];
         [[[CCDirector sharedDirector] openGLView] addSubview:controls.view];
-        
         [NSThread detachNewThreadSelector:@selector(calc) toTarget:self withObject:nil];
         
 
@@ -76,6 +74,7 @@
         self.vz = [Vector4 vectorFromVector:vz1];
         [NSThread sleepForTimeInterval:h];
 
+
     }
 }
 
@@ -84,12 +83,18 @@
     glEnable(GL_LINE_SMOOTH);
     ccDrawLine(PendulumAnchorPoint,pen1);
     ccDrawLine(pen1,pen2);
-
+//    glLineWidth(4);
+    
+//	glColor4ub(100, 255, 0, 255);
+//	ccDrawCircle(pen1, 20, 0, 100, NO);
+//    
+//    glColor4ub(0, 255, 0, 255);
+//    ccDrawCircle(pen2, 20, 0, 100, NO);
     [pendulum1 setPosition:pen1];    
     [pendulum2 setPosition:pen2];
 }
 
-//-(void)ccTouch
+
 -(Vector4*)f:(Vector4*)v{
     return [Vector4 vectorA:v->c b:v->d c:[self f1:v] d:[self f2:v]];
 }

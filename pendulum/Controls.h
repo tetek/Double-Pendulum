@@ -24,6 +24,6 @@
     
 }
 - (id)initWithDelegate:(MainLayer*)delegate_;
-- (void)addFields;
+
 @property(nonatomic,retain)MainLayer *delegate;
 @end
