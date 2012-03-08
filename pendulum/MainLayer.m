@@ -52,6 +52,7 @@
         h = 0.001;
         Controls *controls = [[Controls alloc] initWithDelegate:self];
         [[[CCDirector sharedDirector] openGLView] addSubview:controls.view];
+        
         [NSThread detachNewThreadSelector:@selector(calc) toTarget:self withObject:nil];
         
 
@@ -73,7 +74,6 @@
         
         self.vz = [Vector4 vectorFromVector:vz1];
         [NSThread sleepForTimeInterval:h];
-
 
     }
 }
@@ -113,7 +113,7 @@
 }
 - (void) dealloc
 {
-    [vz release];
+    self.vz = nil;
 	[super dealloc];
 }
 @end

@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 @class MainLayer;
 @interface Controls : UIViewController 
-
 {
     UITextField *mass1;
     UITextField *mass2;

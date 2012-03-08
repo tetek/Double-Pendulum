@@ -10,7 +10,7 @@
 #import "MainLayer.h"
 @interface Controls ()
 -(void)hideKeyboard;
-- (void)addFields;
+-(void)addFields;
 @end
 
 @implementation Controls
